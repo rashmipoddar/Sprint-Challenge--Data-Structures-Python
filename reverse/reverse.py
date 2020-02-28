@@ -45,3 +45,16 @@ class LinkedList:
   def reverse_list(self):
     # TO BE COMPLETED
     pass
+    # Loop through the linked list starting at head
+    # The next of the current should become the current
+    # The previous current becomes the next of the new current 
+
+
+
+
+ll = LinkedList()
+# ll.add_to_head(3)
+ll.add_to_head(4)
+ll.add_to_head(5)
+# print(ll.head.value)
+ll.reverse_list()
