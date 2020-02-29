@@ -6,7 +6,7 @@ class Node:
     self.next_node = next_node
 
   def __repr__(self):
-    return(f'Node: Value is {self.value}, Next node is: {self.next_node}')
+    return f'Node({self.value}, {self.next_node})'
 
   def get_value(self):
     return self.value
@@ -46,19 +46,29 @@ class LinkedList:
     return False
 
   def reverse_list(self):
-    # TO BE COMPLETED
-    pass
-    # Loop through the linked list starting at head
-    # The next of the current should become the current
-    # The previous current becomes the next of the new current 
+    previous = None
+    head = self.head
+    while head:
+      temp = head
+      head = head.next_node
+      temp.next_node = previous 
+      previous = temp  
+    self.head = previous
+
+    # ll = LinkedList()
+    # h = self.head
+    # while h:
+    #   ll.add_to_head(h.value)
+    #   h = h.next_node
+    # return ll
 
 
-
-
-ll = LinkedList()
+# ll = LinkedList()
+# ll.add_to_head(1)
+# ll.add_to_head(2)
 # ll.add_to_head(3)
-ll.add_to_head(4)
-ll.add_to_head(5)
-# print(ll.head.value)
-print(ll)
-ll.reverse_list()
+# ll.add_to_head(4)
+# ll.add_to_head(5)
+# print('before reverse: ', ll.head)
+# ll.reverse_list()
+# print('after reverse: ', ll.head)
