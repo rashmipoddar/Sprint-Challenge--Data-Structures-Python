@@ -5,6 +5,9 @@ class Node:
     # reference to the next node in the list
     self.next_node = next_node
 
+  def __repr__(self):
+    return(f'Node: Value is {self.value}, Next node is: {self.next_node}')
+
   def get_value(self):
     return self.value
 
@@ -57,4 +60,5 @@ ll = LinkedList()
 ll.add_to_head(4)
 ll.add_to_head(5)
 # print(ll.head.value)
+print(ll)
 ll.reverse_list()
